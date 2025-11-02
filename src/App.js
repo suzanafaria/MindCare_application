@@ -1,11 +1,21 @@
 import './App.css';
+import { Container } from '@mui/material';
+import Login from './components/LoginPage';
 
 function App() {
   return (
-    <div className="App">
-       <h1>Plataforma MindCare</h1>
-      <h2>Estruturação dos componentes da aplicação</h2>
-    </div>
+    <Container sx={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        padding: 2,
+        maxWidth: "1200 px",
+        margin: "0 auto",
+      }}>
+      <Login />
+    </Container>
   );
 }
 
