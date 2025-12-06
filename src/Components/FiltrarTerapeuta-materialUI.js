@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useMemo } from "react";
-import "./FiltrarTerapeuta.css";
 import {
   Alert,
   TextField,
   CircularProgress,
   Container,
   Typography,
+  Grid,
   Box,
   Chip,
 } from "@mui/material";
@@ -93,6 +93,7 @@ const FiltrarTerapeuta = () => {
   return (
     <>
       <Container
+        maxWidth="800px"
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -148,24 +149,27 @@ const FiltrarTerapeuta = () => {
           {filtroTerapeutas.length} terapeutas encontrados
         </Typography>
 
-        <div className="therapists-list-container">
+        <Grid
+          container
+          spacing={3}
+          sx={{ width: "100%", justifyContent: "center" }}
+        >
           {filtroTerapeutas.length > 0 ? (
             filtroTerapeutas.map((terapeuta) => (
-              <div key={terapeuta.id} className="therapist-card-item">
-                <CardTerapeuta
-                  terapeuta={terapeuta}
-                  onViewProfile={handleOpenModal}
-                />
-              </div>
+              <CardTerapeuta
+                key={terapeuta.id}
+                terapeuta={terapeuta}
+                onViewProfile={handleOpenModal}
+              />
             ))
           ) : (
-            <div className="therapist-card-item">
+            <Grid item xs={12}>
               <Alert severity="info">
                 Nenhum terapeuta encontrado com os filtros aplicados.
               </Alert>
-            </div>
+            </Grid>
           )}
-        </div>
+        </Grid>
       </Container>
       <ModalPerfilTerapeuta
         open={isModalOpen}

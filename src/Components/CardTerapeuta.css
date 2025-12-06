@@ -1,0 +1,133 @@
+:root {
+  --color-primary: #72acc4;
+  --color-secondary: #97735a;
+  --color-text-secondary: rgba(0, 0, 0, 0.6);
+  --color-background-white: #fff;
+  --spacing-unit: 8px;
+}
+
+.therapist-card {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  max-width: 450px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  gap: 12px;
+}
+
+.therapist-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.therapist-info {
+  margin: 1px;
+}
+
+.therapist-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.therapist-approach {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.append-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.profile-button,
+.schedule-button {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  border-radius: 50px;
+  font-size: 0.5rem;
+  padding: 10px 16px;
+}
+
+.profile-button:hover {
+  background-color: #97735a;
+}
+
+@media (min-width: 600px) {
+  .card-content-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .therapist-details {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+  }
+
+  .append-buttons {
+    flex-direction: column;
+    width: auto;
+    max-width: 260px;
+  }
+
+  .profile-button,
+  .schedule-button {
+    flex: 1;
+    min-width: 0;
+  }
+  @media (min-width: 1024px) {
+    .card-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 12px;
+      gap: 12px;
+    }
+    .append-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 8px;
+    }
+
+    .profile-button,
+    .schedule-button {
+      flex: 1;
+      min-width: 0;
+      width: 100%;
+      border-radius: 50px;
+      font-size: 0.5rem;
+      padding: 10px 16px;
+    }
+  }
+}

@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Box,
-  Avatar,
-  Button,
-  Grid,
-} from "@mui/material";
+import "./CardTerapeuta.css";
+import { Avatar, Button } from "@mui/material";
 
 const CardTerapeuta = ({ terapeuta, onViewProfile }) => {
   const handleButtonClick = () => {
@@ -17,69 +10,40 @@ const CardTerapeuta = ({ terapeuta, onViewProfile }) => {
   };
 
   return (
-    <Grid item xs={12}>
-      <Card
-        variant="outlined"
-        sx={{
-          minHeight: "100px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-        }}
-      >
-        <CardContent
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            alignItems: { xs: "center", md: "center" },
-            height: "100%",
-            justifyContent: "space-between",
-            p: 2,
-            width: "100%",
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              mb: { xs: 2, md: 0 },
-              mr: { xs: 0, md: 3 },
-              flexGrow: 1,
-            }}
-          >
+    <div className="therapist-card-container" key={terapeuta.id}>
+      <div className="therapist-card">
+        <div className="card-content-wrapper">
+          <div className="therapist-details">
             <Avatar
               alt={terapeuta.name}
               sx={{ width: 56, height: 56, mr: 2, flexShrink: 0 }}
             />
-            <Box sx={{ flexGrow: 1, minWidth: 0 }}>
-              <Typography variant="h6">{terapeuta.name}</Typography>
-              <Typography variant="subtitle2" color="text.secondary">
-                {terapeuta.approach}
-              </Typography>
-            </Box>
-          </Box>
-
-          <Button
-            size="small"
-            variant="contained"
-            color="secondary"
-            fullWidth={true}
-            onClick={handleButtonClick}
-            sx={{
-              width: { md: "auto" },
-              mt: { xs: 1, md: 0 },
-              fontSize: { xs: "0.7rem", md: "0.8rem" },
-              color: "white",
-              borderRadius: "50px",
-            }}
-          >
-            Ver Perfil
-          </Button>
-        </CardContent>
-      </Card>
-    </Grid>
+            <div className="therapist-info">
+              <p className="therapist-name">{terapeuta.name}</p>
+              <p className="therapist-approach">{terapeuta.approach}</p>
+            </div>
+          </div>
+          <div className="append-buttons">
+            <Button
+              size="small"
+              variant="outlined"
+              color="secondary"
+              onClick={handleButtonClick}
+              className="profile-button"
+            >
+              Ver Perfil
+            </Button>
+            <Button
+              variant="outlined"
+              color="primary"
+              className="schedule-button"
+            >
+              Agendar Consulta
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

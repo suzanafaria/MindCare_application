@@ -23,7 +23,7 @@ const ModalPerfilTerapeuta = ({ open, handleClose, terapeuta }) => {
         <Typography variant="h5" component="div" gutterBottom>
           {terapeuta.name}
         </Typography>
-        <Typography variant="subtitle1" color="primary" sx={{ mb: 2 }}>
+        <Typography variant="subtitle1" sx={{ mb: 2 }}>
           {terapeuta.approach}
         </Typography>
 
@@ -40,11 +40,8 @@ const ModalPerfilTerapeuta = ({ open, handleClose, terapeuta }) => {
       </DialogContent>
 
       <DialogActions sx={{ m: 2 }}>
-        <Button onClick={handleClose} color="secondary">
+        <Button onClick={handleClose} color="primary">
           Fechar
-        </Button>
-        <Button variant="contained" color="primary" autoFocus>
-          Agendar Consulta
         </Button>
       </DialogActions>
     </Dialog>

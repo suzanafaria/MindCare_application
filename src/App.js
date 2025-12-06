@@ -22,7 +22,7 @@ function App() {
             alignItems: "center",
             justifyContent: "flex-start",
             padding: 2,
-            maxWidth: { xs: "100%", sm: 720, md: 1024 },
+            maxWidth: { xs: "100%", sm: 720, md: 1024, lg: 1440 },
             mx: "auto",
             margin: "0 auto",
             pb: "60px",
